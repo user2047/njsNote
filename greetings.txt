@@ -1,1 +1,1 @@
-hello worldhello worldhello worldhello worldhello worldhello worldhello worldHellocam!Hellocam!
+hello worldhello worldhello worldhello worldhello worldhello worldhello worldHellocam!Hellocam!Hello ${user.username}, you are ${notes.age}!Hello ${user.username}, you are ${notes.age}!
