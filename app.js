@@ -20,15 +20,19 @@ const argv = yargs.argv
 if (command == "add") {
   console.log("adding new note...");
   notes.addNote(argv.title, argv.body);
-} else if (command == "list") {
+}
+  else if (command == "list") {
   console.log("listing notes...");
   notes.getAll();
 }
   else if (command =="read") {
     console.log("reading note...");
+    notes.getNote(argv.title);
+
   }
   else if (command == "remove") {
     console.log("removing note...");
+    notes.removeNote(argv.title);
   }
   else {
     console.log("Command not recognized");

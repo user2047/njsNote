@@ -7,17 +7,29 @@
 // module.exports.add = (a,b) => {
 //   return a+b;
 // }
-console.log("starting notes.js...")
-function addNote(title,body) {
-  console.log("adding note...",title,body);
+console.log("starting notes.js...");
 
-}
+
+function addNote(title,body) {
+  console.log("adding note...", title, body);
+};
+
 function getAll() {
-  console.log("listing all...");
-}
+  console.log("list notes...");
+};
+
+function getNote(title) {
+  console.log("getting note...", title);
+};
+
+function removeNote(title) {
+  console.log("removing note...", title);
+};
 
 
 module.exports = {
-  addNote
-  getAll
+  addNote,
+  getAll,
+  getNote,
+  removeNote
 };
