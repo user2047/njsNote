@@ -7,11 +7,29 @@
 // module.exports.add = (a,b) => {
 //   return a+b;
 // }
+const fs = require("fs");
+
 console.log("starting notes.js...");
 
 
 function addNote(title,body) {
   console.log("adding note...", title, body);
+  var notes =[];
+  var note = {
+    title,
+    body
+  };
+
+  try {
+    var noteString = fs.readFileSync("notes-data.json");
+    notes = JSON.parse(noteString);
+  }
+  catch (error) {
+    console.log(error);
+  };
+
+  notes.push(note);
+  fs.writeFileSync("notes-data.json",JSON.stringify(notes));
 };
 
 function getAll() {
