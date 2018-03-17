@@ -28,6 +28,10 @@ function addNote(title,body) {
     console.log(error);
   };
 
+  var duplicateNotes = notes.filter((note) => {
+    return note.title == title;
+  });
+
   notes.push(note);
   fs.writeFileSync("notes-data.json",JSON.stringify(notes));
 };
