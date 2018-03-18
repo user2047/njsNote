@@ -19,7 +19,13 @@ const argv = yargs.argv
 
 if (command == "add") {
   console.log("adding new note...");
-  notes.addNote(argv.title, argv.body);
+  var note = notes.addNote(argv.title, argv.body);
+  if (note) {
+    console.log("writing note", note);
+  }
+  else {
+    console.log("note",argv.title, "already exists")
+  }
 }
   else if (command == "list") {
   console.log("listing notes...");
@@ -27,12 +33,13 @@ if (command == "add") {
 }
   else if (command =="read") {
     console.log("reading note...");
-    notes.getNote(argv.title);
-
+    console.log(notes.getNote(argv.title));
   }
   else if (command == "remove") {
     console.log("removing note...");
-    notes.removeNote(argv.title);
+    var noteRemoved = notes.removeNote(argv.title);
+    var message =noteRemoved ? "Note was removed" : "Note not removed";
+    console.log(message);
   }
   else {
     console.log("Command not recognized");
