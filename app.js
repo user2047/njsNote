@@ -10,7 +10,7 @@ const yargs = require("yargs");
 var command = process.argv[2]
 console.log("Command: ", command);
 //
-// console.log(process.argv);
+console.log(process.argv);
 // console.log(yargs.argv)
 
 const argv = yargs.argv
@@ -34,6 +34,13 @@ if (command == "add") {
   else if (command =="read") {
     console.log("reading note...");
     console.log(notes.getNote(argv.title));
+    var note = notes.getNote();
+    if (note) {
+      console.log(note);
+    }
+    else {
+        console.log("note not found");
+      }
   }
   else if (command == "remove") {
     console.log("removing note...");
@@ -44,35 +51,3 @@ if (command == "add") {
   else {
     console.log("Command not recognized");
   }
-
-
-// console.log(process.argv)
-
-
-
-
-
-
-// console.log(_.isString("asdf"));
-
-
-
-
-// var filteredArray = _.uniq([1,1,2,2,3,3,4,4]);
-// console.log(filteredArray)
-//
-//
-//
-// var result = notes.addNote();
-// console.log(result);
-//
-// var res2 =notes.add(5,6);
-// console.log(`Result: ${res2}`);
-
-// var user = os.userInfo();
-// console.log("Hello " + user.username);
-//
-// fs.appendFile("greetings.txt", `Hello ${user.username}, you are ${notes.age}!`, (err) => {
-//   if (err) {
-//     console.log("unknown error");
-//   }});
