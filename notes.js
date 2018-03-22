@@ -50,6 +50,7 @@ function addNote(title,body) {
 
 function getAll() {
   console.log("list notes...");
+  return fetchNotes();
 };
 
 function getNote(title) {

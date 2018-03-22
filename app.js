@@ -29,7 +29,9 @@ if (command == "add") {
 }
   else if (command == "list") {
   console.log("listing notes...");
-  notes.getAll();
+  var allNotes = notes.getAll();
+  console.log(`printing ${allNotes.length} note(s)`);
+  allNotes.forEach((note) => notes.logNote(note));
 }
   else if (command =="read") {
     console.log("reading note...");
